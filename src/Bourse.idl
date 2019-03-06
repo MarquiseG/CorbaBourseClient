@@ -1,0 +1,36 @@
+/**
+ ****************************************************************************
+ *
+ * $RCSfile: `Bourse.idl`.java,v $
+ *
+ *
+ *
+ ****************************************************************************
+ *
+ * $Revision: 1.0 $
+ *
+ * $Id: `Bourse.idl`.java,v 2019/02/05 4:15 PM mkaroune Exp $
+ *
+ ****************************************************************************
+ *
+ * Copyright (c) 2019 Nokia . All Rights Reserved.
+ * Please read the associated COPYRIGHTS file for more details.
+ *
+ ****************************************************************************
+ */
+module bourse{
+
+    struct CCotation{
+
+        long long numCotation;
+        string dateCotation;
+        double valAction;
+        string codeSociete;
+    };
+
+    typedef sequence <CCotation> cots;
+    interface Bourse{
+        cots getCotations(in string cs);
+        double getMoyennesCotations(in string cs);
+   };
+};
